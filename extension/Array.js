@@ -3,14 +3,10 @@ function type(data) {
     return toString.call(data);
 }
 function isArray(data) {
-    const res= type(data) === '[object Array]';
-    console.log("array",data,res)
-    return res
+    return type(data) === '[object Array]';
 }
 function isObject(data) {
-    const res=type(data) === '[object Object]'
-    console.log("object",data,res)
-    return res;
+    return type(data) === '[object Object]';
 }
 function isIterable(data) {
     return data instanceof Object;
