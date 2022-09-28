@@ -12,8 +12,8 @@ const min_1 = include(agacraft+"/functions/min.js")
 module.exports = {
     getClass: getClass_1,
     toValue: toValue_1,
-    colors: { ...colors_1 },
-    ascii: { ...ascii_1 },
+    colors: colors_1,
+    ascii: ascii_1,
     uuid: uuid_1,
     load: load_1,
     min: min_1
