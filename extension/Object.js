@@ -1,20 +1,19 @@
 "use strict";
 class Json {
-    #object;
     constructor(obj = {}) {
         if (typeof obj == 'object')
-            this.#object = JSON.parse(JSON.stringify(obj));
+            this._object = JSON.parse(JSON.stringify(obj));
         else
             throw TypeError(`"${obj}" not is a json valid`);
     }
     toObject() {
-        return this.#object;
+        return this._object;
     }
     toString() {
-        return JSON.stringify(this.#object, null, 2);
+        return JSON.stringify(this._object, null, 2);
     }
     compare(Json) {
-        return Json.toObject().compare(this.#object);
+        return Json.toObject().compare(this._object);
     }
     copy() {
         return new Json(this.toObject());
@@ -51,7 +50,7 @@ addFunctionObject('format', function (obj = {}) {
     let bool = false;
     this.keys()
         .filter(value => typeof this[value] == typeof obj[value] || obj[value] == undefined)
-        .forEach(value => (bool ||= !!value));
+        .forEach(value => (bool = bool || !!value));
     return bool;
 });
 addFunctionObject('compare', function (obj = {}) {
