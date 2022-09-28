@@ -3,12 +3,14 @@ function type(data) {
     return toString.call(data);
 }
 function isArray(data) {
-    console.log("array",data)
-    return type(data) === '[object Array]';
+    const res= type(data) === '[object Array]';
+    console.log("array",data,res)
+    return res
 }
 function isObject(data) {
-    console.log("object",data)
-    return type(data) === '[object Object]';
+    const res=type(data) === '[object Object]'
+    console.log("object",data,res)
+    return res;
 }
 function isIterable(data) {
     return isObject(data) || isArray(data);
