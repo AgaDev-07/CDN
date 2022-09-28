@@ -13,7 +13,7 @@ function isObject(data) {
     return res;
 }
 function isIterable(data) {
-    return isObject(data) || isArray(data);
+    return data instanceof Object;
 }
 let addPropertyArray = function (name, func) {
     Array.prototype.__defineGetter__(name, func);
