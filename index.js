@@ -7,7 +7,7 @@ const functions = include(agacraft+"/functions/index.js");
 const extension = include(agacraft+"/extension/index.js");
 
 module.exports = {
-    ...classes,
-    ...functions,
-    ...extension
+    classes,
+    functions,
+    extension
 };
