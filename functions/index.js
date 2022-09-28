@@ -4,7 +4,6 @@ let agacraft = "https://raw.githubusercontent.com/AdrianCraft07/CDN/main"
 
 const getClass_1 = include(agacraft+"/functions/getClass.js")
 const toValue_1 = include(agacraft+"/functions/toValue.js")
-const prompt_1 = include(agacraft+"/functions/prompt.js")
 const colors_1 = include(agacraft+"/functions/colors.js")
 const ascii_1 = include(agacraft+"/functions/ascii.js")
 const uuid_1 = include(agacraft+"/functions/uuid.js")
@@ -13,7 +12,6 @@ const min_1 = include(agacraft+"/functions/min.js")
 module.exports = {
     getClass: getClass_1,
     toValue: toValue_1,
-    prompt: prompt_1,
     colors: { ...colors_1 },
     ascii: { ...ascii_1 },
     uuid: uuid_1,
