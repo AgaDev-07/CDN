@@ -9,7 +9,7 @@ function isObject(data) {
     return type(data) === '[object Object]';
 }
 function isIterable(data) {
-    return data instanceof Object;
+    return isArray(data)||isObject(data);
 }
 let addPropertyArray = function (name, func) {
     Array.prototype.__defineGetter__(name, func);
