@@ -42,13 +42,6 @@ let obj = {
         return str.replace(/(\u001b[\[][0-9]*m)/g, '');
     },
 };
-styles.forEach(style => {
-    const name = style[1];
-    obj[name] = (text) => text.split('').map(style[0]).join('');
-    addProperty(name, function () {
-        return obj[name](this);
-    });
-});
 function addProperty(name, func) {
     let MyString = String;
     MyString.prototype.__defineGetter__(name, func);
