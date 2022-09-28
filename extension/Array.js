@@ -3,9 +3,11 @@ function type(data) {
     return toString.call(data);
 }
 function isArray(data) {
+    console.log("array",data)
     return type(data) === '[object Array]';
 }
 function isObject(data) {
+    console.log("object",data)
     return type(data) === '[object Object]';
 }
 function isIterable(data) {
