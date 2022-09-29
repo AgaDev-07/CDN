@@ -56,16 +56,11 @@ addFunctionObject('format', function (obj = {}) {
 addFunctionObject('compare', function (obj = {}) {
     if (!isObject(obj))
         throw new TypeError(`${obj} is not Object`);
-    return (this.keys().every(name => {
-        if (isIterable(this[name]))
-            return this[name].compare(obj[name]);
-        return this[name] === obj[name];
-    }) &&
-        this.keys().every(name => {
-            if (isIterable(obj[name]))
-                return this[name].compare(obj[name]);
-            return obj[name] === this[name];
-        }));
+    const keysT = this.keys().sort()
+    const keysO = obj.keys().sort()
+    if (keysT.length !== keysO.length || !keysT.compare(keysO))
+        return false;
+    return keysT.map(key => [key, this[key]]).compare(keysO.map(key => [key, obj[key]]));
 });
 addFunctionObject('getData', function (route) {
     if (route == undefined)
